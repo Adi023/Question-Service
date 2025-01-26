@@ -31,12 +31,12 @@ public class QuestionController {
 	}
 
 	@GetMapping("/{id}")
-	public Question get(@PathVariable Long id) {
+	public Question get(@PathVariable("id")Long id) {
 		return questionService.get(id);
 	}
 	
 	@GetMapping("/quiz/{quizId}")
-	public List<Question> getByQuizId(@PathVariable Long quizId) {
+	public List<Question> getByQuizId(@PathVariable("quizId") Long quizId) {
 		return questionService.findByQuizId(quizId);
 	}
 }
